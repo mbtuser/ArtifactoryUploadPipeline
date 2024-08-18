@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: opentext.package_path.tests.qa1.QAOnePackage.java
+
