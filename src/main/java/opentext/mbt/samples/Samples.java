@@ -60,7 +60,7 @@ public class Samples {
 
     @Test
     @Parameters({"firstName", "lastName", "email", "userName", "password", "confirmPassword"})
-    void RegisterNewUser(@Optional("Sample first Name") String firstName, @Optional("Sample last Name") String lastName, @Optional("samples@opentext.com") String email, @Optional("Samples") String userName, @Optional("Aa1234567890") String password, @Optional("Aa1234567890") String confirmPassword) {
+    void RegisterNewUser(@Optional("Sample first Name") String firstName, @Optional("Sample last Name") String lastName, @Optional("samples@opentext.com") String email, @Optional("SamplesAOB") String userName, @Optional("Aa1234567890") String password, @Optional("Aa1234567890") String confirmPassword) {
         driver.get(url);
         boolean customerDashboard = driver.equals(By.xpath("//*[@id=\"root\"]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/span[1]"));
         boolean alreadyLogin = driver.equals(By.xpath("//*[@id=\"root\"]/div[1]/header[1]/div[1]/div[1]/div[1]/button[1]"));
@@ -102,7 +102,7 @@ public class Samples {
 
     @Test
     @Parameters({"accountName"})
-    void OpenNewAccount(@Optional("Samples Account") String accountName) {
+    void OpenNewAccount(@Optional("SamplesAOB Account") String accountName) {
         WebElement accountsTab = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/a[1]"));
         accountsTab.click();
         WebElement newAccounts = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/main[1]/div[1]/div[2]/div[2]/button[1]/span[1]"));
