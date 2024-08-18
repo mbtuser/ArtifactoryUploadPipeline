@@ -1,4 +1,4 @@
-package opentext.demo;
+package samples;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class Samples {
+public class SamplesAOB {
     static RemoteWebDriver driver;
     static WebDriverWait waiter;
     //static WebDriver driver = new ChromeDriver();
@@ -25,7 +25,7 @@ public class Samples {
 
     @Test
     @Parameters({"userName", "password"})
-    void Login(@Optional("admin") String userName, @Optional("demo") String password) {
+    void SamplesLogin(@Optional("admin") String userName, @Optional("demo") String password) {
         driver.get(url);
         boolean customerDashboard = driver.equals(By.xpath("//*[@id=\"root\"]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/span[1]"));
         boolean alreadyLogin = driver.equals(By.xpath("//*[@id=\"root\"]/div[1]/header[1]/div[1]/div[1]/div[1]/button[1]"));
@@ -58,7 +58,7 @@ public class Samples {
 
     @Test
     @Parameters({"firstName", "lastName", "email", "userName", "password", "confirmPassword"})
-    void RegisterNewUser(@Optional("Sample first Name") String firstName, @Optional("Sample last Name") String lastName, @Optional("samples@opentext.com") String email, @Optional("SamplesAOB") String userName, @Optional("Aa1234567890") String password, @Optional("Aa1234567890") String confirmPassword) {
+    void SamplesRegisterNewUser(@Optional("Sample first Name") String firstName, @Optional("Sample last Name") String lastName, @Optional("samples@opentext.com") String email, @Optional("SamplesAOB") String userName, @Optional("Aa1234567890") String password, @Optional("Aa1234567890") String confirmPassword) {
         driver.get(url);
         boolean customerDashboard = driver.equals(By.xpath("//*[@id=\"root\"]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/span[1]"));
         boolean alreadyLogin = driver.equals(By.xpath("//*[@id=\"root\"]/div[1]/header[1]/div[1]/div[1]/div[1]/button[1]"));
@@ -100,7 +100,7 @@ public class Samples {
 
     @Test
     @Parameters({"accountName"})
-    void OpenNewAccount(@Optional("SamplesAOB Account") String accountName) {
+    void SamplesOpenNewAccount(@Optional("SamplesAOB Account") String accountName) {
         WebElement accountsTab = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/a[1]"));
         accountsTab.click();
         WebElement newAccounts = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/main[1]/div[1]/div[2]/div[2]/button[1]/span[1]"));
@@ -117,7 +117,7 @@ public class Samples {
     }
 
     @Test
-    void Logout() {
+    void SamplesLogout() {
         boolean customerDashboard = driver.equals(By.xpath("//*[@id=\"root\"]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/span[1]"));
         boolean alreadyLogin = driver.equals(By.xpath("//*[@id=\"root\"]/div[1]/header[1]/div[1]/div[1]/div[1]/button[1]"));
         if (customerDashboard) {
